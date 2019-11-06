@@ -1,9 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 [System.Serializable]
 public struct AnimatorHash
@@ -162,24 +159,3 @@ static class AnimatorHashExtension
         animator.ResetTrigger(id.hash);
     }
 }
-#if UNITY_EDITOR
-namespace Neonagee.Editor.PropertyDrawers 
-{
-    [CustomPropertyDrawer(typeof(AnimatorHash))]
-    public class AnimatorHashDrawer : PropertyDrawer
-    {
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-        {
-            var propertyName = property.FindPropertyRelative("property");
-            EditorGUI.BeginProperty(position, label, property);
-            EditorGUI.BeginChangeCheck();
-            propertyName.stringValue = EditorGUI.TextField(position, label, propertyName.stringValue);
-            if (EditorGUI.EndChangeCheck())
-            {
-                property.FindPropertyRelative("hash").intValue = Animator.StringToHash(propertyName.stringValue);
-            }
-            EditorGUI.EndProperty();
-        }
-    }
-}
-#endif
