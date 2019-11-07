@@ -1,10 +1,10 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Neonagee.Editor.PropertyDrawers
+namespace Neonagee.EditorInternal.PropertyDrawers
 {
     [CustomPropertyDrawer(typeof(AnimatorHash))]
-    public class AnimatorHashDrawer : PropertyDrawer
+    internal class AnimatorHashDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
