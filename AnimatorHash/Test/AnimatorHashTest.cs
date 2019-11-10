@@ -12,11 +12,11 @@ namespace Neonagee.Tests
         public float fireTime = 0.3f;
         float m_fireTime;
         [Space]
-        public AnimatorHash fireAnim = new AnimatorHash("Fire");
-        public AnimatorHash moveAnim = new AnimatorHash("Move");
-        public AnimatorHash jumpAnim = new AnimatorHash("Jump");
-        public AnimatorHash horizontalParam = new AnimatorHash("Horizontal");
-        public AnimatorHash verticalParam = new AnimatorHash("Vertical");
+        public AnimatorHash fireAnim = "Fire";
+        public AnimatorHash moveAnim = "Move";
+        public AnimatorHash jumpAnim = "Jump";
+        public AnimatorHash horizontalParam = "Horizontal";
+        public AnimatorHash verticalParam = "Vertical";
 
         private void Update()
         {

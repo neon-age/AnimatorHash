@@ -12,14 +12,16 @@ public struct AnimatorHash
         property = propertyName;
         hash = Animator.StringToHash(property);
     }
-
-    public static implicit operator int(AnimatorHash animatorHash)
+    public static implicit operator int (AnimatorHash animatorHash)
     {
         return animatorHash.hash;
     }
+    public static implicit operator AnimatorHash(string propertyName)
+    {
+        return new AnimatorHash(propertyName);
+    }
 }
-
-public static class AnimatorHashExtension
+static class AnimatorHashExtension
 {
     public static bool IsCurrentState(this Animator animator, AnimatorHash stateNameHash, int layerIndex = 0)
     {
