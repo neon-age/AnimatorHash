@@ -1,4 +1,4 @@
 # AnimatorHash
 Codeless Animator.StringToHash implementation
 
-![AnimatorHash](https://i.imgur.com/JOjoqL1.png)
+![AnimatorHash](https://i.imgur.com/gSx5iNO.png)
